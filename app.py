@@ -217,8 +217,7 @@ if "SUPPLIER" in filtered.columns:
     top_suppliers = (
         filtered.groupby("SUPPLIER", as_index=False)["RETAIL_SALES"]
         .sum()
-        .nlargest(10, "RETAIL_SALES")
-    )
+        .nlargest(10, "RETAIL_SALES"))
     chart2 = (
         alt.Chart(top_suppliers)
         .mark_bar()
